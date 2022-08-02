@@ -1,0 +1,74 @@
+let- not mutable variable camel case 
+var- variable mutable camel case
+const- not mutable uppercase
+
+increment i++
+decrement i--
+
+augmented additon +=
+augmented subtracts -=
+augmented multiplication *=
+augmented division /=
+
+Double quotes
+
+" string"
+"string   \*quotes\* in it"
+
+if you use '' you do not need back slashes.
+
+Code	Output
+\'	single quote
+\"	double quote
+\\	backslash
+\n	newline
+\r	carriage return
+\t	tab
+\b	word boundary
+\f	form feed
+
++= can be used with strings too.
+you can concatenate variables inside a string.
+
+string has .length to return string length
+you can access string positions using brackets[0]
+you can not change string values because they are inmutables, you must change all the 
+GET last value of the string
+const lastLetter = firstName[firstName.length - 1];
+
+arrays mutables values indexable
+
+const sandwich = ["peanut butter", "jelly", "bread"];
+array.push(value)add value to the end of the array
+array.unshift(value)add value to the first position
+array.pop()delete value in the last position
+array.shift()delete value in the first position
+
+
+functions
+Assign
+function functionsUse(){
+console.log("My Function");
+}
+Call
+functionUse();
+
+function with arguments
+function functionWithArgs(sum1,sum2)
+{
+  console.log(sum1+sum2);
+}
+
+functionWithArgs(2,4);
+
+function with return value
+function timesFive(num){
+  return num*5;
+}
+
+global variables
+
+use const or let, put it at the beginning of the code, not inside any function.
+
+
+you can assign an operation of a function to a variable.
