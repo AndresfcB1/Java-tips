@@ -192,3 +192,100 @@ const sum = (...args) => {
 
   return args.reduce((a, b) => a + b, 0);
 }
+
+--EXPORT FUNCTIONS TO USE IN OTHER FILES
+
+const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+
+const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+
+export{uppercaseString,lowercaseString};
+
+IMPORT FUNCTIONS TO USE THEM IN OTHER FILES
+
+  import {uppercaseString,lowercaseString} from './string_functions.js';
+// Only change code above this line
+
+uppercaseString("hello");
+lowercaseString("WORLD!");
+
+IMPORT EVERY FUNCTION IN OTHER FILE
+import * as stringFunctions from './string_functions.js';
+// Only change code above this line
+
+stringFunctions.uppercaseString("hello");
+stringFunctions.lowercaseString("WORLD!");
+
+--Create an Export Fallback with export default
+
+export default function subtract(x, y) {
+  return x - y;
+}
+
+WHEN YOU IMPORT A DEFAULT FUNCTION YOU  GIVE ANY NAME YOU WANT TO THE VARIABLE AND IT WILL TAKE THE DEFAULT VALUE
+  import subtract from './math_functions.js';
+// Only change code above this line
+
+subtract(7,4);
+
+CREATE A PROMISE 
+
+const makeServerRequest = new Promise((resolve, reject) => {
+
+});
+
+PROMISE ARGUMENTS USE
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer represents a response from a server
+  let responseFromServer;
+    
+  if(responseFromServer) {
+    // Change this line
+    resolve ("We got the data");
+  } else {  
+    // Change this line
+      reject("Data not received");
+  }
+});
+
+--Handle a Fulfilled Promise with then (WHEN THE PROMISE IS SUCCESFUL 'THEN' SHOW CORRECT MESSAGE )
+
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to true to represent a successful response from a server
+  let responseFromServer = true;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+
+    makeServerRequest.then(result => {
+  console.log(result);
+});
+  } else {  
+    reject("Data not received");
+  }
+});
+
+WHEN THE PROMISE IS NOT COMPPLETED USE 'CATCH' TO SHOW ERROR
+
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to false to represent an unsuccessful response from a server
+  let responseFromServer = false;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.then(result => {
+  console.log(result);
+});
+
+makeServerRequest.catch(error => {
+  console.log(error);
+});
