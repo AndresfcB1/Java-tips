@@ -1,0 +1,7 @@
+
+DEBUGGING
+
+console.log();
+console.clear();
+Verify the type of the answer
+console.log(typeof "");
