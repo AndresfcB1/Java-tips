@@ -309,3 +309,197 @@ temp = thermos.temperature; // 26 in Celsius
 const carrot = new Vegetable('carrot');
 console.log(carrot.name); // Should display 'carrot'
 
+--Add Key-Value Pairs to JavaScript Objects
+
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28
+};
+
+// Only change code below this line
+foods.bananas=13;
+foods.grapes=35;
+foods.strawberries=27;
+// Only change code above this line
+
+console.log(foods);
+
+MODIFY A NESTED OBJECT
+
+let userActivity = {
+  id: 23894201352,
+  date: 'January 1, 2017',
+  data: {
+    totalUsers: 51,
+    online: 42
+  }
+};
+
+// Only change code below this line
+userActivity.data.online=45;
+// Only change code above this line
+
+console.log(userActivity);
+
+ACCESS PROPERTIES VALUES WITH BRACKET NOTATION
+
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+function checkInventory(scannedItem) {
+  // Only change code below this line
+return foods[scannedItem];
+
+  // Only change code above this line
+}
+
+console.log(checkInventory("apples"));
+
+DELETE KEYWORD TO REMOVE OBJECT PROPERTIES
+
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+// Only change code below this line
+delete foods['oranges'];
+delete foods.strawberries;
+delete foods.plums;
+// Only change code above this line
+
+console.log(foods);
+
+CHECK IF AN OBJECT HAS A PROPERTY
+
+users.hasOwnProperty('Alan');
+'Alan' in users;
+
+EX1.
+
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(userObj) {
+  // Only change code below this line
+ return 'Alan' in userObj&&'Jeff' in userObj&&'Sarah' in userObj&&'Ryan' in userObj;
+  // Only change code above this line
+}
+
+console.log(isEveryoneHere(users));
+
+--Iterate Through the Keys of an Object with a for...in Statement
+
+const users = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+function countOnline(usersObj) {
+  // Only change code below this line
+  var count=0;
+for (let user in usersObj) {
+  if(usersObj[user].online==true)
+  {
+count++;
+  }
+}
+return count;
+  // Only change code above this line
+}
+
+console.log(countOnline(users));
+
+RETURN OBJECT KEYS
+
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function getArrayOfUsers(obj) {
+  // Only change code below this line
+return Object.keys(obj)
+  // Only change code above this line
+}
+
+console.log(getArrayOfUsers(users));
+
+--Modify an Array Stored in an Object
+
+let user = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+function addFriend(userObj, friend) {
+  // Only change code below this line
+userObj.data.friends.push(friend);
+return userObj.data.friends;
+  // Only change code above this line
+}
+
+console.log(addFriend(user, 'Pete'));
