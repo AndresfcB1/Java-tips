@@ -1,16 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
 SUMM ALL NUMBERS IN A RANGE
 
 function sumAll(arr) {
