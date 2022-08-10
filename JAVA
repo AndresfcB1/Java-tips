@@ -2833,6 +2833,58 @@ return sumBetween;
 
 sumAll([1, 4]);
 
+--Diff Two Arrays
 
+function diffArray(arr1, arr2) {
+  const newArr = [];
+  var major=[...arr1];
+  var minor=[...arr2];
+ var val=false;
+function check(first,second){
+
+   for (let i = 0; i < first.length; i++) {
+      if (second.indexOf(first[i]) === -1) {
+  
+        newArr.push(first[i]);
+      }
+    }
+  return newArr;
+}
+
+check(major,minor);
+
+
+check(minor,major);
+
+return newArr;
+
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+--Seek and Destroy
+
+function destroyer(arr) {
+      
+    var newArr2=[];
+     for(let j=0; j<arguments[0].length;j++)
+     {
+       var val=false;
+        for(let i=1; i<arguments.length;i++)
+     {
+  if(arguments[0][j]==arguments[i])
+  {
+   val=true;  
+  }
+         }
+     if (!val)
+  {
+    newArr2.push(arguments[0][j])
+  }
+     }
+       return newArr2;
+  }
+  
+  destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 
