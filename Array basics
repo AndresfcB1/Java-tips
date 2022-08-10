@@ -26,3 +26,99 @@ function removeFirstTwo(list) {
   return arr;
 }
 const arr = removeFirstTwo(source);
+
+ARRAYS FUNCTION SPLICE
+2 PARAMS== REMOVE FROM THE FIRST PARAMETER THE NUMBER OF THE SECOND PARAMETER
+
+let array = ['today', 'was', 'not', 'so', 'great'];
+
+array.splice(2, 2);
+
+ARRAYS FUNCTION SPLICE
+3 PARAMS== REMOVE FROM THE FIRST PARAMETER THE NUMBER OF THE SECOND PARAMETER AND ADD ALL THE FOLLOWING PARAMETERS TO THAT POSITION
+
+function htmlColorNames(arr) {
+  // Only change code below this line
+arr.splice(0,2,'DarkSalmon','BlanchedAlmond')
+  // Only change code above this line
+  return arr;
+}
+
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
+
+ARRAYS FUNCTIONS SLICE
+
+REMOVE FROM THE FIRST PARAMETER THE NUMBER OF THE SECOND PARAMETER WITHOUT REMOVING THE SECOND PARAMETER
+IMPORTANT: CREATE NEW ARRAY TO SAVE THE NEW SLICED ARRAY
+
+function forecast(arr) {
+  // Only change code below this line
+let me=arr.slice(2,4);
+
+console.log(me);
+  return me;
+}
+
+// Only change code above this line
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+
+COPY ARRAY SPREAD OPERATOR
+
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    // Only change code below this line
+newArr.push([...arr]);
+    // Only change code above this line
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));
+
+COMBINE ARRAYS WITH SPREAD FUNCTIONS
+
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence=['learning',...fragment,'is','fun']; // Change this line
+  return sentence;
+}
+
+console.log(spreadOut());
+
+CHECK PRESENCE ELEMENT WITH INDEXOF
+
+function quickCheck(arr, elem) {
+  // Only change code below this line
+
+return arr.indexOf(elem)==-1? false:true;
+  // Only change code above this line
+}
+
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+
+--Iterate Through All an Array's Items Using For Loops
+
+function filteredArray(arr, elem) {
+  let newArr = [];
+  // Only change code below this line
+
+ for (let i = 0; i < arr.length; i++) {
+ 
+
+if(arr[i].indexOf(elem)==-1)
+{
+newArr.push(arr[i]);
+}
+   
+
+  
+ }
+  
+  // Only change code above this line
+  return newArr;
+}
+
+console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+
