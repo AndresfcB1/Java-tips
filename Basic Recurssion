@@ -1,0 +1,47 @@
+BASIC RECURSSION
+
+--Count up
+function countUp(n) {
+    if (n<1) {
+      return [];
+    } else {
+         
+      const countArray = countUp(n-1);
+     
+      countArray.push(n);
+var removedValue=countArray.pop();
+    countArray.unshift(removedValue);
+      return countArray;
+    }
+  }
+  console.log(countUp( 5));
+  
+  --Count Down
+  function countDown(n) {
+    if (n<1) {
+      return [];
+    } else {
+         
+      const countArray = countDown(n-1);
+     
+      countArray.push(n);
+
+      return countArray;
+    }
+  }
+  console.log(countDown( 5));
+  
+ -- Count between a range of numbers
+
+function rangeOfNumbers(startNum, endNum) {
+   if (endNum<startNum) {
+      return [];
+    } else {
+         
+      const countArray = rangeOfNumbers(startNum,endNum-1);
+     
+      countArray.push(endNum);
+    
+      return countArray;
+    }
+}
