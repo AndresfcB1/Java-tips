@@ -160,3 +160,17 @@ var result= str.match(myRegex);
 
 
 translatePigLatin("glove");
+
+
+--Search and Replace
+
+function myReplace(str, before, after) {
+
+    let myRegex = /^[A-Z]/; // Change this line
+    var result= myRegex.test(before); 
+  
+      return result? str.replace(before,after[0].toUpperCase()+after.slice(1))
+      : str.replace(before,after.toLowerCase()) ;
+    }
+
+myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
