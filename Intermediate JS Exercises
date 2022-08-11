@@ -351,3 +351,22 @@ function convertHTML(str) {
 // test here
 convertHTML("Dolce & Gabbana");
 
+-- FIBO ODDS
+
+function sumFibs(num) {
+    const fibo=[0,1];
+    for(let i=0; i<num+1;i++)
+  {
+    if(i>1)
+      {
+       fibo.push(fibo[i - 1] + fibo[i - 2]);             
+      }
+  }
+      return fibo
+    .filter(c=>c%2==1)
+    .filter(b=>b<=num)
+    .reduce((partialSum, a) => partialSum + a, 0);  
+  }
+sumFibs(10);
+
+
