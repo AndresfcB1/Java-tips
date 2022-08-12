@@ -1,0 +1,12 @@
+PALINDROME CHECKER
+
+function palindrome(str) {
+
+let myRegexV2 = /[a-z0-9]/gi; // Change this line
+let result = str.toLowerCase().match(myRegexV2);
+
+
+return (result.join("")==result.reverse().join(""))? true:false;
+}
+
+palindrome("A man, a plan, a canal. Panama");
