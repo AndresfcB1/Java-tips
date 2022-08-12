@@ -462,3 +462,93 @@ function sumPrimes(num) {
 
 dropElements([1, 2, 3,4], function(n) {return n >=3 });
 
+FLATTENED ARRAY
+
+function steamrollArray(arr) {
+    const flattenedArray = [];
+    // Loop over array contents
+    for (let i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+        // Recursively flatten entries that are arrays
+        //  and push into the flattenedArray
+        flattenedArray.push(...steamrollArray(arr[i]));
+      } else {
+        // Copy contents that are not arrays
+        flattenedArray.push(arr[i]);
+        console.log(flattenedArray);
+      }
+    }
+    return flattenedArray;
+  };
+  
+  // test here
+  steamrollArray([1, [2], [3, [[4]]]]);
+  
+  --binary to string
+  
+  function binaryAgent(str) {
+  var arr2= str.split(" ");;
+   
+  var final= [];
+
+
+
+
+for(let i=0; i<arr2.length;i++)
+{
+ final.push(String.fromCharCode(parseInt(arr2[i], 2)));
+}
+
+
+console.log(final.join(""))
+  return final.join("");
+}
+
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+
+EVERITHING BE TRUE
+
+function truthCheck(collection, pre) {
+  var count=0;
+
+
+  for(let i=0;i<collection.length;i++)
+  {
+    if(collection[i][pre]) 
+    {
+count++;
+    }
+  }
+return count==collection.length? true:false;
+}
+
+truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot");
+
+ARGUMENTS OPTIONAL
+
+function addTogether() {
+
+const[first, second]=arguments;
+  if(!(typeof(first)=='number'))
+  {
+
+    return undefined
+  } 
+
+
+  
+  if(arguments.length===1)
+  {
+  return (second) => addTogether(first, second);
+  }
+  
+  
+  
+    if(!(typeof(second)=='number'))
+  {
+      return undefined
+  } 
+    return (arguments[0]+arguments[1])
+  }
+  
+  addTogether();
