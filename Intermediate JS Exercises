@@ -595,3 +595,23 @@ const bob = new Person('Bob Ross');
 
 bob.setFirstName("Haskell"); 
   console.log(Object.keys(bob).length);
+  
+ -- Map the Debris
+ 
+ function orbitalPeriod(arr) {
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
+  const arr2=[];
+for(let i=0; i<arr.length;i++)
+{
+
+  arr2.push({name : arr[i].name, orbitalPeriod: Math.round(2*Math.PI*Math.sqrt(Math.pow(arr[i].avgAlt+earthRadius,3)/GM))})
+}
+
+  return arr2;
+}
+
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+
+
+  
