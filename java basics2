@@ -153,3 +153,128 @@ return result;
 telephoneCheck("5555555555");
 
 
+CASH REGISTER
+
+function checkCashRegister(price, cash, cid) {
+
+var total=(cash-price).toFixed(2);
+
+
+var result=0;
+var answer=
+  {'status': "", 'change':[]}
+;
+var cid2=[
+  ["PENNY", 0.00],
+  ["NICKEL", 0.00],
+  ["DIME", 0.00],
+  ["QUARTER", 0.00],
+  ["ONE", 0],
+  ["FIVE", 0],
+  ["TEN", 0],
+  ["TWENTY", 0],
+  ["ONE HUNDRED", 0]
+]
+
+ for(let i=0; i<cid.length;i++)
+  {
+   
+   result=result+cid[i][1];
+ 
+   
+  }
+  if (result==total)
+{
+answer.status='CLOSED' 
+answer.change=cid; 
+return answer;
+}
+
+
+
+function cal(numProp,restar)
+{
+if(cid[numProp][1]>=restar) 
+  {
+ total=(total-restar).toFixed(2);   
+
+  cid[numProp][1]= (cid[numProp][1]-restar).toFixed(2);
+ cid2[numProp][1]= cid2[numProp][1]+restar;
+
+  }
+}
+
+while (total>0|total===0)
+ 
+{ 
+  
+if (total>=100&& cid[8][1]>=100)
+{  
+  cal(8,100)
+  
+}
+else if(total>=20&& cid[7][1]>=20)
+{
+  cal(7,20)
+}
+else if(total>=10&& cid[6][1]>=10)
+{
+  cal(6,10)
+}
+else if(total>=5&& cid[5][1]>=5)
+{
+  cal(5,5)
+}
+else if(total>=1&& cid[4][1]>=1)
+{
+  cal(4,1)
+}
+else if(total>=.25&& cid[3][1]>=.25)
+{
+  cal(3,0.25)
+}
+else if(total>=.1&& cid[2][1]>=.1)
+{
+  cal(2,0.1)
+}
+
+else if(total>=0.05&& cid[1][1]>=.05)
+{
+  cal(1,.05)
+}
+else if(total>=0.01&& cid[0][1]>=.01)
+{
+  cal(0,0.01)
+}
+else
+{
+  break;
+}
+}
+
+if(total==0)
+{
+  
+    for(let i=0; i<cid2.length;i++)
+  {
+    if(cid2[i][1]!=0)
+    {
+   
+answer.status='OPEN';
+answer.change.unshift(cid2[i]);
+ 
+    }
+   
+  }
+  return answer; 
+}
+else if (total>0)
+{
+answer.status="INSUFFICIENT_FUNDS";
+return answer;
+}
+}
+
+checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
+
+
