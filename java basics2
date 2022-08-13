@@ -121,4 +121,35 @@ console.log(newString)
 
 rot13("SERR PBQR PNZC");
 
+VERIFY US NUMBER
+
+function telephoneCheck(str) {
+  var count=0;
+const str2=str.split("");
+  var myRegex2= /[1-9]/gi;
+ 
+for(let i=0; i<str2.length;i++)
+{
+  if(myRegex2.test(str2))
+  {
+    count++;
+  }
+}
+console.log(count);
+if (count==str2.length&&count==10)
+{
+return true
+}
+else 
+{
+
+  var myRegex= /^(1|1 |)(\([2-9][0-9][0-9]\)|\([2-9][0-9][0-9]\) | [2-9][0-9][0-9]-|[2-9][0-9][0-9]-|[2-9][0-9][0-9]|[2-9][0-9][0-9]-)[0-9]{3}-[0-9]{4}|[0-9]{3} [0-9]{4}/gi;
+  var result=myRegex.test(str);
+// console.log(str.match(myRegex));
+return result;
+}
+}
+
+telephoneCheck("5555555555");
+
 
