@@ -10,3 +10,115 @@ return (result.join("")==result.reverse().join(""))? true:false;
 }
 
 palindrome("A man, a plan, a canal. Panama");
+
+
+ROMAN CONVERTER
+function convertToRoman(num) {
+  var result="";
+
+  
+while (num>0)
+{
+if (num>=1000)
+{
+  num=num-1000;
+  result=result+'M';
+}
+else if(num>=900)
+{
+ num=num-900;
+  result=result+'CM';
+}
+else if(num>=500)
+{
+ num=num-500;
+  result=result+'D';
+}
+else if(num>=400)
+{
+ num=num-400;
+  result=result+'CD';
+}
+else if(num>=100)
+{
+ num=num-100;
+  result=result+'C';
+}
+else if(num>=90)
+{
+ num=num-90;
+  result=result+'XC';
+}else if(num>=50)
+{
+ num=num-50;
+  result=result+'L';
+}else if(num>=40)
+{
+ num=num-40;
+  result=result+'XL';
+}else if(num>=10)
+{
+ num=num-10;
+  result=result+'X';
+}else if(num>=9)
+{
+ num=num-9;
+  result=result+'IX';
+}else if(num>=5)
+{
+ num=num-5;
+  result=result+'V';
+}else if(num>=4)
+{
+ num=num-4;
+  result=result+'IV';
+}else if(num>=1)
+{
+ num=num-1;
+  result=result+'I';
+}
+
+}
+console.log(result)
+ return result;
+}
+
+convertToRoman(3999);
+
+CAESARS CYPHER
+
+function rot13(str) {
+var newString="";
+
+    for (let i = 0; i < str.length; i++) {
+      /* code of current character */
+      const charCode = str.charCodeAt(i);
+ if(charCode<65|charCode>90)
+     {
+       newString=newString + String.fromCharCode(charCode);
+     }
+
+     else if(charCode+13>65&&charCode+13>90)
+     {
+var newCharcode=((charCode+13)-90)+64;
+
+
+newString=newString + String.fromCharCode(newCharcode);
+
+     }
+     else if(charCode+13>=65)
+     {
+        newString=newString + String.fromCharCode(charCode+13);
+     }
+ 
+    }
+
+console.log(newString)
+
+
+  return newString;
+}
+
+rot13("SERR PBQR PNZC");
+
+
